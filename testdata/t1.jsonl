@@ -1,0 +1,12 @@
+{"id": "amazon",   "unixtime":             0, "aws":      ["shop"]}
+{"id": "amazon",   "unixtime":            42, "aws":      ["shop", "ec2"]}
+{"id": "amazon",   "unixtime": 1500299792458, "aws":      ["shop", "ec2", "photo"]}
+{"id": "apple",    "unixtime":             0, "os":       ["Mac"]}
+{"id": "apple",    "unixtime":            42, "os":       ["macOS", "iOS"]}
+{"id": "apple",    "unixtime": 1500299792458, "os":       ["macOS", "iOS", "iPadOS"]}
+{"id": "facebook", "unixtime":             0, "products": ["SNS"]}
+{"id": "facebook", "unixtime":            42, "products": ["SNS", "React"]}
+{"id": "facebook", "unixtime": 1500299792458, "products": ["SNS", "React", "PyTorch"]}
+{"id": "google",   "unixtime":             0, "services": ["search"]}
+{"id": "google",   "unixtime":            42, "services": ["search", "gmail"]}
+{"id": "google",   "unixtime": 1500299792458, "services": ["search", "gmail", "gce"]}
