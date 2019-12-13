@@ -1,6 +1,10 @@
 ---
 - hosts: localhost
   tasks:
+    - name: copy testdata
+      copy:
+        src:  ../testdata
+        dest: /home/github/groupby/
     - name: test/rust
       block:
         - name: create target directory
@@ -33,6 +37,8 @@
           changed_when: 
             - '"Compiling" in rust_build_debug.stderr'
         - name: build/release
+          tags:
+            - release
           shell: cargo build --release
           args:
             chdir: /home/github/groupby/groupby-rust
@@ -47,6 +53,8 @@
           changed_when: 
             - '"Compiling" in rust_test_debug.stderr'
         - name: test/release
+          tags:
+            - release
           shell: cargo test --release
           args:
             chdir: /home/github/groupby/groupby-rust
