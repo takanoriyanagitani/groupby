@@ -1,0 +1,55 @@
+---
+- hosts: localhost
+  tasks:
+    - name: test/rust
+      block:
+        - name: create target directory
+          file:
+            path:  /home/github/groupby/groupby-rust/
+            state: directory
+            mode:  "0755"
+        - name: rsync
+          synchronize:
+            src:        "{{ item }}"
+            dest:       /home/github/groupby/groupby-rust/
+            archive:    no
+            compress:   no
+            copy_links: no
+            delete:     yes
+            group:      yes
+            links:      yes
+            mode:       push
+            perms:      yes
+            recursive:  yes
+            times:      yes
+          loop:
+            - ../groupby-rust/src
+            - ../groupby-rust/Cargo.toml
+        - name: build/debug
+          shell: cargo build
+          args:
+            chdir: /home/github/groupby/groupby-rust
+          register: rust_build_debug
+          changed_when: 
+            - '"Compiling" in rust_build_debug.stderr'
+        - name: build/release
+          shell: cargo build --release
+          args:
+            chdir: /home/github/groupby/groupby-rust
+          register: rust_build_release
+          changed_when: 
+            - '"Compiling" in rust_build_release.stderr'
+        - name: test/debug
+          shell: cargo test
+          args:
+            chdir: /home/github/groupby/groupby-rust
+          register: rust_test_debug
+          changed_when: 
+            - '"Compiling" in rust_test_debug.stderr'
+        - name: test/release
+          shell: cargo test --release
+          args:
+            chdir: /home/github/groupby/groupby-rust
+          register: rust_test_release
+          changed_when: 
+            - '"Compiling" in rust_test_release.stderr'

@@ -1,0 +1,4 @@
+targets:
+  hosts:
+    localhost:
+      var1: 299792458
