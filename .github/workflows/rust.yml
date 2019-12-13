@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: check formatted
+      run: cd groupby-rust && cargo fmt --all -- --check
     - name: Build
       run: cd groupby-rust && cargo build --verbose
     - name: Run tests
