@@ -28,5 +28,7 @@ jobs:
       run: |
         pip install pytest
         #pytest
+    - name: Test with unittest
+      run: |
         cd groupby-python
         python3 app.test.py
