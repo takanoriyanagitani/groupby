@@ -1,9 +1,11 @@
-{"id": "amazon",   "unixtime":             0, "aws":      ["shop"]}
-{"id": "amazon",   "unixtime":            42, "aws":      ["shop", "ec2"]}
-{"id": "amazon",   "unixtime": 1500299792458, "aws":      ["shop", "ec2", "photo"]}
-{"id": "apple",    "unixtime":             0, "os":       ["Mac"]}
-{"id": "apple",    "unixtime":            42, "os":       ["macOS", "iOS"]}
-{"id": "apple",    "unixtime": 1500299792458, "os":       ["macOS", "iOS", "iPadOS"]}
+{"id": "microsoft", "unixtime":             0, "app":      ["excel"]}
+{"id": "microsoft", "unixtime":             0, "app":      ["excel", "word"]}
+{"id": "amazon",    "unixtime":             0, "aws":      ["shop"]}
+{"id": "amazon",    "unixtime":            42, "aws":      ["shop", "ec2"]}
+{"id": "amazon",    "unixtime": 1500299792458, "aws":      ["shop", "ec2", "photo"]}
+{"id": "apple",     "unixtime":             0, "os":       ["Mac"]}
+{"id": "apple",     "unixtime":            42, "os":       ["macOS", "iOS"]}
+{"id": "apple",     "unixtime": 1500299792458, "os":       ["macOS", "iOS", "iPadOS"]}
 {}parse error ignore me][
 {
 [par   er or
@@ -15,3 +17,5 @@ ke}
 {"id": "google",   "unixtime":             0, "services": ["search"]}
 {"id": "google",   "unixtime":            42, "services": ["search", "gmail"]}
 {"id": "google",   "unixtime": 1500299792458, "services": ["search", "gmail", "gce"]}
+{"id": "microsoft", "unixtime":             0, "app":      ["excel", "word", "powerpoint"]}
+{"id": "microsoft", "unixtime":             0, "app":      ["excel", "word", "powerpoint", "access"]}

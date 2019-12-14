@@ -1,16 +1,20 @@
 import unittest
 
 import app
+import os
+import operator
 
 class T1(unittest.TestCase):
   def test_parse_json_or_default(self):
-    self.assertEqual({}, app.parse_json_or_default())
-    self.assertEqual({}, app.parse_json_or_default("{}"))
-    self.assertEqual({}, app.parse_json_or_default("{"))
-    self.assertEqual({}, app.parse_json_or_default("["))
-    self.assertEqual({"id": "some id"}, app.parse_json_or_default('{"id": "some id"}'))
-    self.assertEqual({"id": "some id", "unixtime": 1500299792458}, app.parse_json_or_default('{"id": "some id", "unixtime": 1500299792458}'))
+    self.assertEqual((False, bytes(), {}), app.parse_json())
+    self.assertEqual((False, bytes(), {}), app.parse_json(b""))
+    self.assertEqual((False, b"{",    {}), app.parse_json(b"{"))
+    self.assertEqual((False, b"}",    {}), app.parse_json(b"}"))
+    self.assertEqual((False, b"]",    {}), app.parse_json(b"]"))
+    self.assertEqual((False, b"[",    {}), app.parse_json(b"["))
+    self.assertEqual((True,  b"{}",   {}), app.parse_json(b"{}"))
     pass
+
   pass
 
 def main(): return unittest.main()
