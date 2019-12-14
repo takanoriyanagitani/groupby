@@ -4,6 +4,11 @@
 {"id": "apple",    "unixtime":             0, "os":       ["Mac"]}
 {"id": "apple",    "unixtime":            42, "os":       ["macOS", "iOS"]}
 {"id": "apple",    "unixtime": 1500299792458, "os":       ["macOS", "iOS", "iPadOS"]}
+{}parse error ignore me][
+{
+[par   er or
+ pr        r]
+ke}
 {"id": "facebook", "unixtime":             0, "products": ["SNS"]}
 {"id": "facebook", "unixtime":            42, "products": ["SNS", "React"]}
 {"id": "facebook", "unixtime": 1500299792458, "products": ["SNS", "React", "PyTorch"]}
