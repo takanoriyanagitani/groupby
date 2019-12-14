@@ -3,6 +3,7 @@ import unittest
 import app
 import os
 import operator
+import json
 from itertools import zip_longest
 
 class T1(unittest.TestCase):
@@ -106,6 +107,58 @@ class T1(unittest.TestCase):
         self.assertEqual(it[0][1], it[1][1])
         self.assertEqual(it[0][2], it[1][2])
         pass
+      pass
+    pass
+
+  def test_jsonl_group2file(self):
+    tdir = "./.test/jsonl_group2file"
+    os.makedirs(tdir, exist_ok=True)
+    f = lambda t: tuple == type(t) and 3 == len(t) and bool == type(t[0]) and t[0] and dict == type(t[2]) and "key" in t[2]
+    row2key = lambda t: t[2]["key"]
+    key2filename = lambda key: os.path.join(tdir, key + ".jsonl")
+    jname = "../testdata/t1.jsonl"
+    self.assertTrue(os.path.isfile(jname))
+    with open(jname, mode="rb") as j:
+      g = app.jsonl_groupby(j, f, row2key)
+      for key, it in g: app.jsonl_group2file(key, it, key2filename)
+      self.assertTrue(os.path.isfile(os.path.join(tdir, "google.jsonl")))
+      self.assertTrue(os.path.isfile(os.path.join(tdir, "amazon.jsonl")))
+      self.assertTrue(os.path.isfile(os.path.join(tdir, "facebook.jsonl")))
+      self.assertTrue(os.path.isfile(os.path.join(tdir, "apple.jsonl")))
+      with open(os.path.join(tdir, "google.jsonl"), mode="rb") as g:
+        a = map(lambda b: json.loads(b.decode("utf-8")), g)
+        e = [
+          {"key": "google",   "unixtime": 0, "name": "search"    },
+          {"key": "google",   "unixtime": 1, "name": "android"   },
+          {"key": "google",   "unixtime": 2, "name": "tensorflow"},
+        ]
+        self.assertEqual(e, list(a))
+      with open(os.path.join(tdir, "amazon.jsonl"), mode="rb") as a:
+        a = map(lambda b: json.loads(b.decode("utf-8")), a)
+        e = [
+          {"key": "amazon",   "unixtime": 0, "name": "shop"      },
+          {"key": "amazon",   "unixtime": 1, "name": "kindle"    },
+          {"key": "amazon",   "unixtime": 2, "name": "aws"       },
+        ]
+        self.assertEqual(e, list(a))
+      with open(os.path.join(tdir, "facebook.jsonl"), mode="rb") as f:
+        a = map(lambda b: json.loads(b.decode("utf-8")), f)
+        e = [
+          {"key": "facebook", "unixtime": 0, "name": "sns"       },
+          {"key": "facebook", "unixtime": 1, "name": "react"     },
+          {"key": "facebook", "unixtime": 2, "name": "pytorch"   },
+        ]
+        self.assertEqual(e, list(a))
+      with open(os.path.join(tdir, "apple.jsonl"), mode="rb") as a:
+        a = map(lambda b: json.loads(b.decode("utf-8")), a)
+        e = [
+          {"key": "apple",    "unixtime": 0, "name": "mac"       },
+          {"key": "apple",    "unixtime": 1, "name": "iphone"    },
+          {"key": "apple",    "unixtime": 2, "name": "ipad"      },
+          {"key": "apple",    "unixtime": 3, "name": "tv"        },
+          {"key": "apple",    "unixtime": 4, "name": "app"       },
+        ]
+        self.assertEqual(e, list(a))
       pass
     pass
 

@@ -1,16 +1,16 @@
-{"key": "google",   "unixtime": 0, "name": "search"    },
-{"key": "google",   "unixtime": 1, "name": "android"   },
-{"key": "google",   "unixtime": 2, "name": "tensorflow"},
-{"key": "amazon",   "unixtime": 0, "name": "shop"      },
-{"key": "amazon",   "unixtime": 1, "name": "kindle"    },
-{"key": "amazon",   "unixtime": 2, "name": "aws"       },
-{"key": "facebook", "unixtime": 0, "name": "sns"       },
-{"key": "facebook", "unixtime": 1, "name": "react"     },
-{"key": "facebook", "unixtime": 2, "name": "pytorch"   },
-{"key": "apple",    "unixtime": 0, "name": "mac"       },
-{"key": "apple",    "unixtime": 1, "name": "iphone"    },
-{"key": "apple",    "unixtime": 2, "name": "ipad"      },
+{"key": "google",   "unixtime": 0, "name": "search"    }
+{"key": "google",   "unixtime": 1, "name": "android"   }
+{"key": "google",   "unixtime": 2, "name": "tensorflow"}
+{"key": "amazon",   "unixtime": 0, "name": "shop"      }
+{"key": "amazon",   "unixtime": 1, "name": "kindle"    }
+{"key": "amazon",   "unixtime": 2, "name": "aws"       }
+{"key": "facebook", "unixtime": 0, "name": "sns"       }
+{"key": "facebook", "unixtime": 1, "name": "react"     }
+{"key": "facebook", "unixtime": 2, "name": "pytorch"   }
+{"key": "apple",    "unixtime": 0, "name": "mac"       }
+{"key": "apple",    "unixtime": 1, "name": "iphone"    }
+{"key": "apple",    "unixtime": 2, "name": "ipad"      }
 [ parse error
 } perr
-{"key": "apple",    "unixtime": 3, "name": "tv"        },
-{"key": "apple",    "unixtime": 4, "name": "app"       },
+{"key": "apple",    "unixtime": 3, "name": "tv"        }
+{"key": "apple",    "unixtime": 4, "name": "app"       }
