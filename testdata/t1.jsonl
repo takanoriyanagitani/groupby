@@ -1,21 +1,16 @@
-{"id": "microsoft", "unixtime":             0, "app":      ["excel"]}
-{"id": "microsoft", "unixtime":             0, "app":      ["excel", "word"]}
-{"id": "amazon",    "unixtime":             0, "aws":      ["shop"]}
-{"id": "amazon",    "unixtime":            42, "aws":      ["shop", "ec2"]}
-{"id": "amazon",    "unixtime": 1500299792458, "aws":      ["shop", "ec2", "photo"]}
-{"id": "apple",     "unixtime":             0, "os":       ["Mac"]}
-{"id": "apple",     "unixtime":            42, "os":       ["macOS", "iOS"]}
-{"id": "apple",     "unixtime": 1500299792458, "os":       ["macOS", "iOS", "iPadOS"]}
-{}parse error ignore me][
-{
-[par   er or
- pr        r]
-ke}
-{"id": "facebook", "unixtime":             0, "products": ["SNS"]}
-{"id": "facebook", "unixtime":            42, "products": ["SNS", "React"]}
-{"id": "facebook", "unixtime": 1500299792458, "products": ["SNS", "React", "PyTorch"]}
-{"id": "google",   "unixtime":             0, "services": ["search"]}
-{"id": "google",   "unixtime":            42, "services": ["search", "gmail"]}
-{"id": "google",   "unixtime": 1500299792458, "services": ["search", "gmail", "gce"]}
-{"id": "microsoft", "unixtime":             0, "app":      ["excel", "word", "powerpoint"]}
-{"id": "microsoft", "unixtime":             0, "app":      ["excel", "word", "powerpoint", "access"]}
+{"key": "google",   "unixtime": 0, "name": "search"    },
+{"key": "google",   "unixtime": 1, "name": "android"   },
+{"key": "google",   "unixtime": 2, "name": "tensorflow"},
+{"key": "amazon",   "unixtime": 0, "name": "shop"      },
+{"key": "amazon",   "unixtime": 1, "name": "kindle"    },
+{"key": "amazon",   "unixtime": 2, "name": "aws"       },
+{"key": "facebook", "unixtime": 0, "name": "sns"       },
+{"key": "facebook", "unixtime": 1, "name": "react"     },
+{"key": "facebook", "unixtime": 2, "name": "pytorch"   },
+{"key": "apple",    "unixtime": 0, "name": "mac"       },
+{"key": "apple",    "unixtime": 1, "name": "iphone"    },
+{"key": "apple",    "unixtime": 2, "name": "ipad"      },
+[ parse error
+} perr
+{"key": "apple",    "unixtime": 3, "name": "tv"        },
+{"key": "apple",    "unixtime": 4, "name": "app"       },
