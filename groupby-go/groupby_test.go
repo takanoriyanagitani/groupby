@@ -7,19 +7,9 @@ import (
   "bufio"
 )
 
-func TestScan(t *testing.T){
-  //tdir := "./.test/GroupBy"
-  //e1 := os.MkdirAll(tdir, 0755)
-  //switch e1 {
-  //  case nil: break
-  //  default:  t.Errorf("Unable to create test directory: %v\n", e1)
-  //}
-
+func TestMap(t *testing.T){
   f, e2 := os.Open("../testdata/t1.jsonl")
-  switch e2 {
-    case nil: break
-    default:  t.Errorf("Unable to open test file: %v\n", e2)
-  }
+  switch nil != e2 { case true:  t.Errorf("Unable to open test file: %v\n", e2) }
   defer f.Close()
 
   s := bufio.NewScanner(f)
@@ -28,10 +18,7 @@ func TestScan(t *testing.T){
 
   switch js.Scan() { case false: t.Errorf("Unable to get next data.\n") }
   m, e := js.Map()
-  switch e {
-    case nil: break
-    default:  t.Errorf("Unable to get map: %v\n", e)
-  }
+  switch nil != e { case true:  t.Errorf("Unable to get map: %v\n", e) }
   switch "google" == m["key"] { case false: t.Errorf("key mismatch.\n") }
   for js.Scan() {
     m, e = js.Map()
@@ -53,4 +40,12 @@ func TestScan(t *testing.T){
     case nil: t.Errorf("No parse error.\n")
     default:  t.Logf("Expected error: %v\n", e)
   }
+}
+
+func TestEquals(t *testing.T){
+  a := NewStringKey("apple")
+  b := NewStringKey("amazon")
+  c := NewStringKey("apple")
+  switch a.Equals(b){ case  true: t.Errorf("Not equal.\n") }
+  switch c.Equals(a){ case false: t.Errorf("Not differ.\n") }
 }
